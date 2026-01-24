@@ -819,28 +819,385 @@ List of all Clojure libs, we had to fork from Perforce, and their relationships
 * could be one of the reasons why Perforce hated to update those
 * each of them depends on 3rd party projects
 * Perforce ships heavily outdated dependencies
----
-
-class: center, middle, inverse
-
-# ???
-<br/>
-
+* most of them will be consolidated into a single repo
 ---
 
 .left-column[
-## bla
-### Drop Puppet
-### Drop OpenVox 7
-### Forks
+## OpenVoxProject
+### Where are we?
+### ezbake
+### Dependencies
 ]
 
 .right-column[
-* dependency graph
+
+![foo](mermaid-diagram-2026-01-24-223157.png)
+
 ]
 
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
 [![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+???
+
+* dependencies for module testing
+* we forked puppet-strings and facter
+* we maintain the majority of the ecosystem
+
+---
+
+.left-column[
+## OpenVoxProject
+### Where are we?
+### ezbake
+### Dependencies
+]
+
+.right-column[
+* Graph of all Ruby dependencies for openvox: [github.com/voxpupuli/voxpupuli.github.io/pull/565](https://github.com/voxpupuli/voxpupuli.github.io/pull/565)
+
+* We had to fork puppet-strings → [openvox-strings](https://github.com/voxpupuli/openvox-strings)
+
+  * puppet-strings had a dependency to puppet, but that's gone now
+
+* We had to fork Facter → [OpenFact](https://github.com/OpenVoxProject/openfact)
+
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+???
+
+* too big, won't show it here
+---
+
+count: false
+
+.left-column[
+## OpenVoxProject
+### Where are we?
+### ezbake
+### Dependencies
+]
+
+.right-column[
+* Graph of all Ruby dependencies for openvox: [github.com/voxpupuli/voxpupuli.github.io/pull/565](https://github.com/voxpupuli/voxpupuli.github.io/pull/565)
+
+* We had to fork puppet-strings → [openvox-strings](https://github.com/voxpupuli/openvox-strings)
+
+  * puppet-strings had a dependency to puppet, but that's gone now
+
+* We had to fork Facter → [OpenFact](https://github.com/OpenVoxProject/openfact)
+
+* We removed puppetlabs_spec_helper from our module testing pipeline
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+???
+
+* too big, won't show it here
+---
+class: center, middle, inverse
+
+# Community<br>Update
+
+---
+
+.left-column[
+## Community Update
+### Drop Puppet
+]
+
+.right-column[
+* We discussed dropping support for Perforce package → [github.com/voxpupuli/community-triage/issues/59](https://github.com/voxpupuli/community-triage/issues/59)
+
+  * Packages are EoL / have dependencies with open CVEs
+
+  * Perforce won't publish updates
+
+  * We removed `puppet` from metadata.json as a supported implementation
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+
+???
+
+* why is that change important? In the past years we discussed our CI matrix setup here. matrix is generated automatically. you can still have puppet and openvox in metadata.json
+* our CI is limited
+---
+
+.left-column[
+## Community Update
+### Drop Puppet
+### Drop OpenVox 7
+]
+
+.right-column[
+* We discussed dropping OpenVox 7 support → [https://github.com/voxpupuli/community-triage/issues/60](https://github.com/voxpupuli/community-triage/issues/60)
+
+* Back when we started the OpenVoxProject, we still supported Puppet 7, so we offered OpenVox 7 & 8 packages
+
+* OpenVox 7 only exists to make it easier for people to migrate
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+
+???
+
+* perfect example of community work
+* we started a discussion in public
+* we had a waiting period until everybody had a chance to raise their opinions & concerns
+---
+
+count: false
+
+.left-column[
+## Community Update
+### Drop Puppet
+### Drop OpenVox 7
+]
+
+.right-column[
+* We discussed dropping OpenVox 7 support → [https://github.com/voxpupuli/community-triage/issues/60](https://github.com/voxpupuli/community-triage/issues/60)
+
+* Back when we started the OpenVoxProject, we still supported Puppet 7, so we offered OpenVox 7 & 8 packages
+
+* OpenVox 7 only exists to make it easier for people to migrate
+
+* A big thank you to [Christoph Maser (TheMeier)](https://github.com/TheMeier) for doing most of those changes!
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+---
+
+.left-column[
+## Community Update
+### Drop Puppet
+### Drop OpenVox 7
+### Supported platforms
+]
+
+.right-column[
+For OpenVox-Server/DB/Agent & OpenBolt
+
+* EL8, EL9, EL9, EL10, Amazon 2, Amazon 2023, Fedora, SLES 15
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+---
+
+count: false
+
+.left-column[
+## Community Update
+### Drop Puppet
+### Drop OpenVox 7
+### Supported platforms
+]
+
+.right-column[
+For OpenVox-Server/DB/Agent & OpenBolt
+
+* EL8, EL9, EL9, EL10, Amazon 2, Amazon 2023, Fedora, SLES 15
+
+  * X86, PowerPC64le (openbolt will be added), AARCH64
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+---
+
+count: false
+
+.left-column[
+## Community Update
+### Drop Puppet
+### Drop OpenVox 7
+### Supported platforms
+]
+
+.right-column[
+For OpenVox-Server/DB/Agent & OpenBolt
+
+* EL8, EL9, EL9, EL10, Amazon 2, Amazon 2023, Fedora, SLES 15
+
+  * X86, PowerPC64le (openbolt will be added), AARCH64
+
+  * [FIPS X86 for EL8 & EL9 (EL10 soon)](https://voxpupuli.org/blog/2026/01/13/new-fips-agent-packages/)
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+---
+
+count: false
+
+.left-column[
+## Community Update
+### Drop Puppet
+### Drop OpenVox 7
+### Supported platforms
+]
+
+.right-column[
+For OpenVox-Server/DB/Agent & OpenBolt
+
+* EL8, EL9, EL9, EL10, Amazon 2, Amazon 2023, Fedora, SLES 15
+
+  * X86, PowerPC64le (openbolt will be added), AARCH64
+
+  * [FIPS X86 for EL8 & EL9 (EL10 soon)](https://voxpupuli.org/blog/2026/01/13/new-fips-agent-packages/)
+
+  * SLES 16 in the making!
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+---
+
+count: false
+
+.left-column[
+## Community Update
+### Drop Puppet
+### Drop OpenVox 7
+### Supported platforms
+]
+
+.right-column[
+For OpenVox-Server/DB/Agent & OpenBolt
+
+* EL8, EL9, EL9, EL10, Amazon 2, Amazon 2023, Fedora, SLES 15
+
+  * X86, PowerPC64le (openbolt will be added), AARCH64
+
+  * [FIPS X86 for EL8 & EL9 (EL10 soon)](https://voxpupuli.org/blog/2026/01/13/new-fips-agent-packages/)
+
+  * SLES 16 in the making!
+
+* Debian 11, 12, 13
+
+  * X86, AARCH64
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+---
+
+count: false
+
+.left-column[
+## Community Update
+### Drop Puppet
+### Drop OpenVox 7
+### Supported platforms
+]
+
+.right-column[
+For OpenVox-Server/DB/Agent & OpenBolt
+
+* EL8, EL9, EL9, EL10, Amazon 2, Amazon 2023, Fedora, SLES 15
+
+  * X86, PowerPC64le (openbolt will be added), AARCH64
+
+  * [FIPS X86 for EL8 & EL9 (EL10 soon)](https://voxpupuli.org/blog/2026/01/13/new-fips-agent-packages/)
+
+  * SLES 16 in the making!
+
+* Debian 11, 12, 13
+
+  * X86, AARCH64
+
+  * ARMHF in the making!
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+---
+
+.left-column[
+## Community Update
+### Drop Puppet
+### Drop OpenVox 7
+### Supported platforms
+### Release train!
+]
+
+.right-column[
+
+![release traaaaaain](2026-01-13_22-17.png)
+
+(from [linkedin.com/pulse/art-agile-release-train-dummies-puneet-relan](https://www.linkedin.com/pulse/art-agile-release-train-dummies-puneet-relan))
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+???
+
+* We can release very fast
+* we have good test coverage
+---
+
+.left-column[
+
+## Community Update
+### Drop Puppet
+### Drop OpenVox 7
+### Supported platforms
+### Release train!
+]
+
+.right-column[
+* Rocky Linux 10 Release: 2025-06-11
+
+* openvox-agent EL10 Release: 2025-02-21
+
+* OpenVox Time to market: -110 days!
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+???
+
+---
+
+.left-column[
+
+## Community Update
+### Drop Puppet
+### Drop OpenVox 7
+### Supported platforms
+### Release train!
+]
+
+.right-column[
+* openvox-server EL10 release: 2025-06-03
+
+* PE 2023.8.6 with EL10 support: 2025-12-18
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+???
 
 ---
 class: center, middle, inverse
