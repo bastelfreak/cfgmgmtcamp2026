@@ -310,7 +310,7 @@ count: false
 
 * Certified Puppet Solution Consultant
 
-* New: Clojure & ezbake expert
+* New: Clojure & [ezbake](https://github.com/OpenVoxProject/ezbake) expert
 
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
 [![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
@@ -326,6 +326,52 @@ class: center, middle, inverse
 # OpenVoxProject
 <br/>
 
+???
+
+lets talk a bit about the OpenVoxProject. lets start with CI stuff
+
+---
+
+class: center, middle, inverse
+
+# Who used ezbake?
+<br/>
+
+---
+
+class: center, middle, inverse
+
+# Who understands ezbake?
+<br/>
+
+???
+
+* ezbake is the build tool, from Perforce, for clojure applications
+* puppet = the software
+* perforce = the company Puppet Inc or Perforce
+---
+.left-column[
+## OpenVoxProject
+### ezbake
+]
+
+.right-column[
+![simple ezbake build chain](ezbake.drawio.svg)
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+???
+
+* It took a long time to understand this chain
+* We added docker to the chain to provide an easier build environment
+* this allows us to run it locally or in CI
+* same chain for openvoxdb & server
+* builds *for all supported platforms combined* take around 10 minutes
+* we build the docker container and ruby every time
+* a mgiration to rootless containers & podman would be nice
+* caching the container would be great as well
 ---
 
 .left-column[
