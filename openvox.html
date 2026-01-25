@@ -533,6 +533,10 @@ class: center, middle, inverse
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
 [![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
 
+???
+
+* lets assume we want to build openvoxdb or openvoxserver
+* both are applications written in clojure
 ---
 
 count: false
@@ -550,6 +554,9 @@ count: false
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
 [![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
 
+???
+
+* As with most of our projects, we have a rake task
 ---
 
 count: false
@@ -567,6 +574,10 @@ count: false
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
 [![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
 
+???
+
+* rake will build and start a container
+* room for improvement. doesn't make sense to always build the container
 ---
 
 count: false
@@ -584,6 +595,10 @@ count: false
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
 [![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
 
+???
+
+* compile ruby
+* in the container we compile the same ruby version that we ship in the openvox-agent AIO packages
 ---
 
 count: false
@@ -601,6 +616,11 @@ count: false
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
 [![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
 
+???
+
+* then we start ezbake
+* a build framework from Puppet for building clojure web applications with trapperkeeper
+* trapperkeeper manages different clojure web applications within a JVM
 ---
 
 count: false
