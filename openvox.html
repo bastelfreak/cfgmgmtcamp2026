@@ -1683,13 +1683,20 @@ class: center, middle, inverse
 ---
 
 .left-column[
+## Infra
+### Foreman
 ]
 
 .right-column[
-* our best practice repo
-* our foreman -> connect to github for SSO
-* mirror setup
-* kubernetes
+![foreman](2026-01-25_16-15.png)
+
+* Join our DevSecOps-Team in #sig-infrastructure if you want to help
+
+* We run out own foreman instance and want to make that publicly available
+
+* We use the OpenBolt Foreman Integration: [github.com/overlookinfra/foreman_openbolt](https://github.com/overlookinfra/foreman_openbolt)
+
+  * dedicated talk tomorrow: [cfp.cfgmgmtcamp.org/ghent2026/talk/DVS97G/](https://cfp.cfgmgmtcamp.org/ghent2026/talk/DVS97G/)
 ]
 
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
@@ -1697,6 +1704,116 @@ class: center, middle, inverse
 
 ---
 
+.left-column[
+## Infra
+### Foreman
+### Kubernetes
+]
+
+.right-column[
+* We have a sponsored kubernetes cluster :happyface:
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+---
+
+count: false
+
+.left-column[
+## Infra
+### Foreman
+### Kubernetes
+]
+
+.right-column[
+* We have a sponsored kubernetes cluster :happyface:
+
+* We don't use it yet :sadface:
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+---
+
+count: false
+
+.left-column[
+## Infra
+### Foreman
+### Kubernetes
+]
+
+.right-column[
+* We have a sponsored kubernetes cluster :happyface:
+
+* We don't use it yet :sadface:
+
+* We would like to use it as GitHub runners. Interested? Join [#sig-infrastructure on IRC/Slack](https://voxpupuli.org/connect/)
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+---
+
+.left-column[
+## Infra
+### Foreman
+### Kubernetes
+### Best practices
+]
+
+.right-column[
+* [jpartlow/kvm_automation_tooling](https://github.com/jpartlow/kvm_automation_tooling) puppet module to spin up libvirt virtual machines with OpenBolt and Terraform
+
+* Used in [github.com/OpenVoxProject/acceptance-pipelines](https://github.com/OpenVoxProject/acceptance-pipelines/) for OpenVox acceptance testing
+
+  * Installs Agent/DB/Server packages on multiple VMs and runs beaker
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+???
+
+* We spin up multiple VMs within github actions to test stuff
+---
+
+count: false
+
+.left-column[
+## Infra
+### Foreman
+### Kubernetes
+### Best practices
+]
+
+.right-column[
+* [jpartlow/kvm_automation_tooling](https://github.com/jpartlow/kvm_automation_tooling) puppet module to spin up libvirt virtual machines with OpenBolt and Terraform
+
+* Used in [github.com/OpenVoxProject/acceptance-pipelines](https://github.com/OpenVoxProject/acceptance-pipelines/) for OpenVox acceptance testing
+
+  * Installs Agent/DB/Server packages on multiple VMs and runs beaker
+
+* [voxpupuli.org/docs/arch_single_server](https://voxpupuli.org/docs/arch_single_server/) documents an OpenVox reference implementation
+
+* [github.com/voxpupuli/reference-architecture](https://github.com/voxpupuli/reference-architecture) potential demo controlrepo *with multinode beaker acceptance tests*
+
+  * Interested? Join [#sig-infrastructure on IRC/Slack](https://voxpupuli.org/connect/)
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+???
+
+* The controlrepo is basically empty
+* we can now implement our reference documentation and actually test it
+
+---
 class: center, middle, inverse
 
 # VoxConf
@@ -1829,24 +1946,14 @@ count: false
 * Do you want conferences somewhere else? do you want to organize one as well?
 
 ---
+
 .left-column[
 ## Conclusion
 ]
 
 .right-column[
 
-* add yourself to https://voxpupuli.org/map/
-* You can do fully automated PE upgrades, without SSH access
-
-* checkout [github.com/bastelfreak/testcontrolrepo](https://github.com/bastelfreak/testcontrolrepo/tree/peadm?tab=readme-ov-file#demo-controlrepo-for-peadm)
-
-* Let me know if you are interested in a demo!
-
-* For feedback: `bastelfreak` on [voxpupuli.slack.com](https://short.voxpupu.li/puppetcommunity_slack_signup/) / [Libera.Chat IRC](https://voxpupuli.org/connect/) or [tim@bastelfreak.de](mailto:tim@bastelfreak.de)
-
-* This talk and previous ones: [github.com/bastelfreak/talks](https://github.com/bastelfreak/talks)
-
-### Thanks for your attention!
+* Please join our [IRC/Slack](https://voxpupuli.org/connect/) to provide feedback
 
 ]
 
@@ -1855,16 +1962,83 @@ count: false
 
 ???
 
-* how to deploy code
-* different preparation steps
-* cleanup node groups / pe.conf
-* ensure PEADM uses correct node group
-* the issue with the installer URL
-* stderr redirection https://github.com/puppetlabs/puppetlabs-peadm/pull/523
-* duplicated tasks for running puppet agent
-* duplicated fact detection https://github.com/puppetlabs/puppetlabs-peadm/pull/459
-* puppetlabs/node_manager doesn't allow uppercase environment names
+* do you want a testing period before we publish new packages to the official repos?
+* which distributions do you need support for?
 
+---
+
+count: false
+
+.left-column[
+## Conclusion
+]
+
+.right-column[
+
+* Please join our [IRC/Slack](https://voxpupuli.org/connect/) to provide feedback
+
+* Review and comment our topics for Wednesday: [github.com/orgs/voxpupuli/projects/14](https://github.com/orgs/voxpupuli/projects/14)
+
+]
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+???
+
+---
+
+count: false
+
+.left-column[
+## Conclusion
+]
+
+.right-column[
+
+* Please join our [IRC/Slack](https://voxpupuli.org/connect/) to provide feedback
+
+* Review and comment our topics for Wednesday: [github.com/orgs/voxpupuli/projects/14](https://github.com/orgs/voxpupuli/projects/14)
+
+* Come to VoxConf 2026 and submit talks!
+
+  * There will be a travel budget again
+]
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+???
+
+* Registration will open soon!
+
+---
+
+count: false
+
+.left-column[
+## Conclusion
+]
+
+.right-column[
+
+* Please join our [IRC/Slack](https://voxpupuli.org/connect/) to provide feedback
+
+* Review and comment our topics for Wednesday: [github.com/orgs/voxpupuli/projects/14](https://github.com/orgs/voxpupuli/projects/14)
+
+* Come to VoxConf 2026 and submit talks!
+
+  * There will be a travel budget again
+
+* For feedback: `bastelfreak` on [voxpupuli.slack.com](https://short.voxpupu.li/puppetcommunity_slack_signup/) / [Libera.Chat IRC](https://voxpupuli.org/connect/) or [tim@bastelfreak.de](mailto:tim@bastelfreak.de)
+
+* This talk and previous ones: [github.com/bastelfreak/talks](https://github.com/bastelfreak/talks)
+
+### Thanks for your attention!
+
+]
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+???
 
     </textarea>
     <script src="remark-latest.min.js"></script>
