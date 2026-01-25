@@ -216,7 +216,7 @@
         height: 550px;
       }
       .right-column .smallimg img {
-        width: 90%;
+        width: 40%;
       }
       .right-column .nowidth img {
         width: auto;
@@ -638,6 +638,10 @@ count: false
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
 [![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
 
+???
+
+* leiningen fetches all clojure dependencies form clojars.org
+* compiles stuff
 ---
 
 count: false
@@ -655,6 +659,11 @@ count: false
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
 [![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
 
+???
+
+* ezbake has a lot of config options
+* project name like server/db, depedencies for the final rpm/deb packages, users that the package shall create
+* rendered into a ruby file
 ---
 
 count: false
@@ -672,6 +681,9 @@ count: false
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
 [![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
 
+???
+
+* ezbake, in the container, calls a rake task (pl:build?)
 ---
 
 count: false
@@ -689,6 +701,10 @@ count: false
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
 [![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
 
+???
+
+* rake task uses the packaging gem
+* packaging is a gem from Perforce, can do a bunch of jenkins interaction and mirror stuff
 ---
 count: false
 
@@ -705,6 +721,9 @@ count: false
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
 [![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
 
+???
+
+* packaging gem can also render templates! now we have an erb template that renders a shell script!
 ---
 count: false
 
@@ -721,6 +740,9 @@ count: false
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
 [![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
 
+???
+
+We are still in the container, running ezbake, which started a rake task. This task now iterates on the platform list
 ---
 count: false
 
@@ -737,6 +759,9 @@ count: false
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
 [![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
 
+???
+
+* Within this iteration, we run a shell script for each platform!
 ---
 count: false
 
@@ -753,6 +778,10 @@ count: false
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
 [![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
 
+???
+
+* This script calls 3 other scripts
+* mostly prepare the packaging root. they prepare the filesystem layour for the final rpm/deb package
 ---
 count: false
 
@@ -769,6 +798,10 @@ count: false
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
 [![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
 
+???
+
+* now the shell script calls a ruby script
+* this script puts together parameters for fpm
 ---
 count: false
 
@@ -785,6 +818,12 @@ count: false
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
 [![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
 
+???
+
+* Then we start fpm
+* creates all packages
+* the jar file is only compiled once
+* all platforms have the same jar file
 ---
 
 count: false
@@ -803,6 +842,8 @@ count: false
 [![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
 
 ???
+
+* awscli used to upload to an S3 bucket
 
 * It took a long time to understand this chain
 * We added docker to the chain to provide an easier build environment
@@ -1009,12 +1050,15 @@ count: false
 .right-column[
 For OpenVox-Server/DB/Agent & OpenBolt
 
-* EL8, EL9, EL9, EL10, Amazon 2, Amazon 2023, Fedora, SLES 15
+* EL8, EL9, EL10, Amazon 2, Amazon 2023, Fedora, SLES 15
 ]
 
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
 [![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
 
+???
+
+* we still have EL7. Amazon 2 is basically EL7. We could continue building EL7 if someone sponsors that
 ---
 
 count: false
@@ -1029,7 +1073,7 @@ count: false
 .right-column[
 For OpenVox-Server/DB/Agent & OpenBolt
 
-* EL8, EL9, EL9, EL10, Amazon 2, Amazon 2023, Fedora, SLES 15
+* EL8, EL9, EL10, Amazon 2, Amazon 2023, Fedora, SLES 15
 
   * X86, PowerPC64le (openbolt will be added), AARCH64
 ]
@@ -1051,7 +1095,7 @@ count: false
 .right-column[
 For OpenVox-Server/DB/Agent & OpenBolt
 
-* EL8, EL9, EL9, EL10, Amazon 2, Amazon 2023, Fedora, SLES 15
+* EL8, EL9, EL10, Amazon 2, Amazon 2023, Fedora, SLES 15
 
   * X86, PowerPC64le (openbolt will be added), AARCH64
 
@@ -1075,7 +1119,7 @@ count: false
 .right-column[
 For OpenVox-Server/DB/Agent & OpenBolt
 
-* EL8, EL9, EL9, EL10, Amazon 2, Amazon 2023, Fedora, SLES 15
+* EL8, EL9, EL10, Amazon 2, Amazon 2023, Fedora, SLES 15
 
   * X86, PowerPC64le (openbolt will be added), AARCH64
 
@@ -1101,7 +1145,7 @@ count: false
 .right-column[
 For OpenVox-Server/DB/Agent & OpenBolt
 
-* EL8, EL9, EL9, EL10, Amazon 2, Amazon 2023, Fedora, SLES 15
+* EL8, EL9, EL10, Amazon 2, Amazon 2023, Fedora, SLES 15
 
   * X86, PowerPC64le (openbolt will be added), AARCH64
 
@@ -1117,6 +1161,9 @@ For OpenVox-Server/DB/Agent & OpenBolt
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
 [![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
 
+???
+
+* We still have Debian 10 packages and could continue if someone sponsors that
 ---
 
 count: false
@@ -1131,7 +1178,7 @@ count: false
 .right-column[
 For OpenVox-Server/DB/Agent & OpenBolt
 
-* EL8, EL9, EL9, EL10, Amazon 2, Amazon 2023, Fedora, SLES 15
+* EL8, EL9, EL10, Amazon 2, Amazon 2023, Fedora, SLES 15
 
   * X86, PowerPC64le (openbolt will be added), AARCH64
 
@@ -1149,6 +1196,88 @@ For OpenVox-Server/DB/Agent & OpenBolt
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
 [![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
 
+---
+
+count: false
+
+.left-column[
+## Community Update
+### Drop Puppet
+### Drop OpenVox 7
+### Supported platforms
+]
+
+.right-column[
+For OpenVox-Server/DB/Agent & OpenBolt
+
+* EL8, EL9, EL10, Amazon 2, Amazon 2023, Fedora, SLES 15
+
+  * X86, PowerPC64le (openbolt will be added), AARCH64
+
+  * [FIPS X86 for EL8 & EL9 (EL10 soon)](https://voxpupuli.org/blog/2026/01/13/new-fips-agent-packages/)
+
+  * SLES 16 in the making!
+
+* Debian 11, 12, 13
+
+  * X86, AARCH64
+
+  * ARMHF in the making!
+
+* Ubuntu 20.04, 22.04, 24.04, 25.04
+
+  * X86, AARCH64
+
+  * ARMHF in the making!
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+---
+
+count: false
+
+.left-column[
+## Community Update
+### Drop Puppet
+### Drop OpenVox 7
+### Supported platforms
+]
+
+.right-column[
+For OpenVox-Server/DB/Agent & OpenBolt
+
+* EL8, EL9, EL10, Amazon 2, Amazon 2023, Fedora, SLES 15
+
+  * X86, PowerPC64le (openbolt will be added), AARCH64
+
+  * [FIPS X86 for EL8 & EL9 (EL10 soon)](https://voxpupuli.org/blog/2026/01/13/new-fips-agent-packages/)
+
+  * SLES 16 in the making!
+
+* Debian 11, 12, 13
+
+  * X86, AARCH64
+
+  * ARMHF in the making!
+
+* Ubuntu 20.04, 22.04, 24.04, 25.04
+
+  * X86, AARCH64
+
+  * ARMHF in the making!
+
+  * Do people care about Ubuntu 24.10, 25.10..?
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+???
+
+* we only build the LTS versions and 25.04
+* should we build all the ubuntu releases?
 ---
 
 .left-column[
@@ -1220,6 +1349,30 @@ For OpenVox-Server/DB/Agent & OpenBolt
 ???
 
 ---
+
+.left-column[
+
+## Community Update
+### Drop Puppet
+### Drop OpenVox 7
+### Supported platforms
+### Release train!
+## New logo!
+]
+
+.right-column[
+![openvox logo](openvox_wortbildmarke_1.png)
+.smallimg[![V](openvox_bildmarke.svg)]
+* Available in our repo: [github.com/voxpupuli/logos](https://github.com/voxpupuli/logos/tree/master/images/OpenVox)
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+???
+
+---
+
 class: center, middle, inverse
 
 # GitHub
@@ -1319,8 +1472,9 @@ class: center, middle, inverse
 * Code Annotations (RuboCop, puppet-lint, rspec-puppet, Beaker, **rspec**, **Clojure**)!
 
 ![img](clojure.png)
-]
 
+* Thank you to Nick Burgan for contributing this!
+]
 ---
 
 .left-column[
@@ -1332,9 +1486,12 @@ class: center, middle, inverse
 * Code Annotations (RuboCop, puppet-lint, rspec-puppet, Beaker, **rspec**, **Clojure**, **minitest**)!
 
 ![img](clojure.png)
+
+* Thank you to Ewoud and Evgeni for contributing this!
 ]
 
 ---
+
 .left-column[
 ## GitHub
 ### code annotations
@@ -1342,13 +1499,80 @@ class: center, middle, inverse
 ]
 
 .right-column[
+
+* GitHub Actions 2025: $11,993.91 consumed usage
+
+* GitHub Actions 2025: $5.49 billable usage
 ]
 
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
 [![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
 
+???
+
+* github sponsors us 500 concurrent runners. They are free for public repos
+
+* One repo was private by accident
+
 ---
 
+count: false
+
+.left-column[
+## GitHub
+### code annotations
+### CI costs
+]
+
+.right-column[
+
+* GitHub Actions 2025: $11,993.91 consumed usage
+
+* GitHub Actions 2025: $5.49 billable usage
+
+* GitHub Action January 2026: $3,640.05 consumed usage
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+
+???
+
+* We build a ton of new packages
+* we had openvox-db/server releases
+* we added new distros
+* we merged ~400 renovate PRs for clojure dependencies
+---
+
+count: false
+
+.left-column[
+## GitHub
+### code annotations
+### CI costs
+]
+
+.right-column[
+
+* GitHub Actions 2025: $11,993.91 consumed usage
+
+* GitHub Actions 2025: $5.49 billable usage
+
+* GitHub Action January 2026: $3,640.05 consumed usage
+
+* GitHub enterprise is billed per user per month: $6.300/month, sponsored by GitHub
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+
+???
+
+* perforce pricing issues
+
+---
 class: center, middle, inverse
 
 # Money
@@ -1361,13 +1585,54 @@ class: center, middle, inverse
 ]
 
 .right-column[
+
+* 20-30 monthly sponsors
+
+* Current balance: $21.700
+
+* Total raised: $32.000
+
+* $18.000 raised via GitHub, $14.000 via open-collective
 ]
 
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
 [![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
 
+
+???
+
+* If you can, please donate via open-collective
+* less fees for us
+* payout via github is unreliable
 ---
 
+count: false
+
+.left-column[
+## Money
+### Income
+]
+
+.right-column[
+
+* 20-30 monthly sponsors
+
+* Current balance: $21.700
+
+* Total raised: $32.000
+
+* $18.000 raised via GitHub, $14.000 via open-collective
+
+* Biggest donation: $10.000 from Microsoft
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+???
+
+I never had a contact with microsoft. not before the donation, not afterwards
+---
 .left-column[
 ## Money
 ### Income
@@ -1375,6 +1640,11 @@ class: center, middle, inverse
 ]
 
 .right-column[
+* Config Management Camp 2025: $8.000
+
+* VoxConf 2025: $5.000
+
+* Config Management Camp 2026: $8.000
 ]
 
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
@@ -1390,6 +1660,11 @@ class: center, middle, inverse
 ]
 
 .right-column[
+* We could reimburse contributors for... contributions
+
+* The PMC defined a process in [github.com/voxpupuli/community-triage/wiki/Vox-Pupuli-Bounty-Program](https://github.com/voxpupuli/community-triage/wiki/Vox-Pupuli-Bounty-Program)
+
+* Discussion on Wednesday: [github.com/voxpupuli/community-triage/issues/85](https://github.com/voxpupuli/community-triage/issues/85)
 ]
 
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
@@ -1417,16 +1692,8 @@ class: center, middle, inverse
 * kubernetes
 ]
 
----
-
-class: center, middle, inverse
-
-# Community
-<br/>
-
----
-
-we have logo (move to top?)
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
 
 ---
 
@@ -1567,6 +1834,8 @@ count: false
 ]
 
 .right-column[
+
+* add yourself to https://voxpupuli.org/map/
 * You can do fully automated PE upgrades, without SSH access
 
 * checkout [github.com/bastelfreak/testcontrolrepo](https://github.com/bastelfreak/testcontrolrepo/tree/peadm?tab=readme-ov-file#demo-controlrepo-for-peadm)
