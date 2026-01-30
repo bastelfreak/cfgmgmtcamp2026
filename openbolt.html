@@ -50,6 +50,7 @@
       .remark-slide-content {
         background-image: url(blue-skies.jpg);
         background-size: cover;
+        font-size: 26px;
       }
       .remark-slide-content h1 {
         font-size: 3em;
@@ -118,10 +119,7 @@
         color: #777872;
         text-shadow: 0 0 20px #333;
       }
-      .inverseold h1{
-        color: #f3f3f3;
-        line-height: 1.2em;
-      }
+      .inverseold h1,
       .inverseold h2 {
         color: #f3f3f3;
         line-height: 0.8em;
@@ -216,7 +214,7 @@
         height: 550px;
       }
       .right-column .smallimg img {
-        width: 40%;
+        width: 90%;
       }
       .right-column .nowidth img {
         width: auto;
@@ -339,7 +337,7 @@ class: center, middle, inverse
 
 * Perforce stopped open source development
 
-* Vox Pupuli continues the open source development as Open Vox Project
+* Vox Pupuli continues the open source development
 ]
 
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
@@ -360,7 +358,7 @@ count: false
 
 * Perforce stopped open source development
 
-* Vox Pupuli continues the open source development as Open Vox Project
+* Vox Pupuli continues the open source development
 
 * puppet-agent -> [openvox-agent](https://github.com/OpenVoxProject/openvox?tab=readme-ov-file#openvox)
 
@@ -387,8 +385,8 @@ count: false
 .right-column[
 example class for managing nginx
 ```puppet
-\# @summary configures nginx in a bad way
-\# @param content the whole nginx config
+# @summary configures nginx in a bad way
+# @param content the whole nginx config
 class nginx (
   Sensitive[String[1]] $content,
 ) {
@@ -412,6 +410,10 @@ class nginx (
 
 ???
 
+* We have inline documentation with puppet-strings
+* the class keyword
+* parameter with datatype
+* some resources
 ---
 class: center, middle, inverse
 
@@ -425,7 +427,7 @@ class: center, middle, inverse
 ---
 
 .left-column[
-## Bolt
+## OpenBolt
 ### Tasks?!
 ]
 
@@ -433,6 +435,8 @@ class: center, middle, inverse
 * Runs tasks via ssh or WinRM on remote systems
 
   * CLI only
+
+* A task is a executable binary/script + json file
 ]
 
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
@@ -445,17 +449,11 @@ class: center, middle, inverse
 count: false
 
 .left-column[
-## Bolt
+## OpenBolt
 ### Tasks?!
 ]
 
 .right-column[
-* Runs tasks via ssh or WinRM on remote systems
-
-  * CLI only
-
-* A task is a executable binary/script + json file
-
 ```json
 {
   "puppet_task_version": 1,
@@ -487,7 +485,7 @@ git branch -m "$PT_control_repo_branch" production
 ---
 
 .left-column[
-## Bolt
+## OpenBolt
 ### Tasks?!
 ]
 
@@ -511,21 +509,21 @@ git branch -m "$PT_control_repo_branch" production
 ---
 
 .left-column[
-## Bolt
+## OpenBolt
 ### Tasks?!
 ### Plans?!
 ]
 
 .right-column[
-* Bolt Plans are written in Puppet DSL (or [YAML](https://www.puppet.com/docs/bolt/latest/writing_yaml_plans.html))
+* Plans are written in OpenVox DSL (or [YAML](https://www.puppet.com/docs/bolt/latest/writing_yaml_plans.html))
 
-* Plans apply puppet code, execute Bolt or Puppet functions, start tasks or other plans
+* Plans apply puppet code, execute OpenBolt or OpenVox functions, start tasks or other plans
 
 ```puppet
 # @summary Conference Demo plan
 # @param message the string we want to paste to STDOUT
 plan test::foo (
-  String[1] $message = 'Hi Puppet.Run 2025!',
+  String[1] $message = 'Hi CfgMgmtCamp 2026!',
 ) {
   out::message($message)
   run_task('puppet_agent::install', get_targets('all'))
@@ -548,9 +546,9 @@ plan test::foo (
 
 class: center, middle, inverseold
 
-# Bolt is the missing part in the ecosystem for imperative workflows and orchestration
+## OpenBolt is the missing part in the ecosystem for imperative workflows and orchestration
 
-## It combines scripts and Puppet code
+### It combines scripts and OpenVox code
 
 ???
 
@@ -560,20 +558,20 @@ class: center, middle, inverseold
 ---
 
 .left-column[
-## OpenVoxProject
-### Where are we?
+## OpenBolt
+### Tasks?!
+### Plans?!
+### Foreman?!
 ]
 
 .right-column[
-We continue the open source development for the ecosystem!
+* OpenBolt is a CLI only application
 
-* puppet-agent -> [openvox-agent](https://github.com/OpenVoxProject/openvox?tab=readme-ov-file#openvox)
+* Puppet Enterprise has a Web-UI & API
 
-* puppetserver -> [openvox-server](https://github.com/OpenVoxProject/openvox-server)
+  * closed source & expensive
 
-* puppetdb -> [openvoxdb](https://github.com/OpenVoxProject/openvoxdb)
-
-* bolt -> [openbolt](https://github.com/OpenVoxProject/openbolt)
+* Most Puppet/OpenVox users run Foreman anyways and don't want another UI
 ]
 
 [![company-logo](logo-1181x1181.png)](https://www.betadots.de)
@@ -581,6 +579,102 @@ We continue the open source development for the ecosystem!
 
 
 ???
+
+---
+
+count: false
+
+.left-column[
+## OpenBolt
+### Tasks?!
+### Plans?!
+### Foreman?!
+]
+
+.right-column[
+* OpenBolt is a CLI only application
+
+* Puppet Enterprise has a Web-UI & API
+
+  * closed source & expensive
+
+* Most Puppet/OpenVox users run Foreman anyways and don't want another UI
+
+* Why not add OpenBolt support to Foreman?!
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+
+???
+
+---
+
+.left-column[
+## OpenBolt
+### Tasks?!
+### Plans?!
+### Foreman?!
+]
+
+.right-column[
+![foreman-main-ui](foreman-main-ui.png)
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+
+???
+
+* *someone* created a foreman plugin
+---
+
+.left-column[
+## OpenBolt
+### Tasks?!
+### Plans?!
+### Foreman?!
+]
+
+.right-column[
+![foreman-main-ui](foreman-main-ui.png)
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+
+???
+
+---
+.left-column[
+## Conclusion
+]
+
+.right-column[
+
+* Please join our [IRC/Slack](https://voxpupuli.org/connect/) to provide feedback
+
+* Review and comment our topics for Wednesday: [github.com/orgs/voxpupuli/projects/14](https://github.com/orgs/voxpupuli/projects/14)
+
+* Come to VoxConf 2026 and submit talks!
+
+  * There will be a travel budget again
+
+* For feedback: `bastelfreak` on [voxpupuli.slack.com](https://short.voxpupu.li/puppetcommunity_slack_signup/) / [Libera.Chat IRC](https://voxpupuli.org/connect/) or [tim@bastelfreak.de](mailto:tim@bastelfreak.de)
+
+* This talk and previous ones: [github.com/bastelfreak/talks](https://github.com/bastelfreak/talks)
+
+### Thanks for your attention!
+
+]
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+???
+
 
     </textarea>
     <script src="remark-latest.min.js"></script>
