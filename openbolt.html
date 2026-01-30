@@ -322,6 +322,99 @@ count: false
 
 class: center, middle, inverse
 
+# OpenVox<br><br>
+
+???
+
+* Who knows OpenVox?
+
+---
+
+.left-column[
+## OpenVox
+### What?
+]
+
+.right-column[
+
+* Perforce stopped open source development
+
+* Vox Pupuli continues the open source development as Open Vox Project
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+???
+
+---
+
+count: false
+
+.left-column[
+## OpenVox
+### What?
+]
+
+.right-column[
+
+* Perforce stopped open source development
+
+* Vox Pupuli continues the open source development as Open Vox Project
+
+* puppet-agent -> [openvox-agent](https://github.com/OpenVoxProject/openvox?tab=readme-ov-file#openvox)
+
+* puppetserver -> [openvox-server](https://github.com/OpenVoxProject/openvox-server)
+
+* puppetdb -> [openvoxdb](https://github.com/OpenVoxProject/openvoxdb)
+
+* bolt -> [openbolt](https://github.com/OpenVoxProject/openbolt)
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+???
+
+---
+
+.left-column[
+## OpenVox
+### What?
+### How?
+]
+
+.right-column[
+example class for managing nginx
+```puppet
+\# @summary configures nginx in a bad way
+\# @param content the whole nginx config
+class nginx (
+  Sensitive[String[1]] $content,
+) {
+  package { 'nginx':
+    ensure => 'installed',
+  }
+  -> file { '/etc/nginx/nginx.conf':
+    ensure  => 'file',
+    content => $content,
+  }
+  ~> service { 'nginx':
+    ensure => 'running',
+    enable => true,
+  }
+}
+```
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+???
+
+---
+class: center, middle, inverse
+
 # OpenBolt
 
 ## Tasks & Plans
