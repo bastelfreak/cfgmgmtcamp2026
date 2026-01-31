@@ -216,6 +216,15 @@
       .right-column .smallimg img {
         width: 90%;
       }
+      .right-column .img80 img {
+        width: 80%;
+      }
+      .right-column .img70 img {
+        width: 70%;
+      }
+      .right-column .img57 img {
+        width: 57%;
+      }
       .right-column .nowidth img {
         width: auto;
       }
@@ -651,21 +660,249 @@ count: false
 ???
 
 ---
+
+.left-column[
+## OpenBolt
+### Tasks?!
+### Plans?!
+### Foreman?!
+]
+
+.right-column[
+![foreman-launch-task.png](foreman-launch-task.png)
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+
+???
+
+* The "Launch Task" option allows you to select any smartproxy with the openbolt feature (which is available when the OpenBolt Smartproxy plugin is installed). Afterwards you can select N targets to run the task and select an available task from the selected Smartproxy. On the right side you can configure OpenBolt connection settings.
+---
+
+.left-column[
+## OpenBolt
+### Tasks?!
+### Plans?!
+### Foreman?!
+]
+
+.right-column[
+![task-metadata-minimal.png](task-metadata-minimal.png)
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+
+???
+
+* After selecting a task, the task metadata is fetched and shown. Additional input elements will appear, if the task support it.
+---
+
+.left-column[
+## OpenBolt
+### Tasks?!
+### Plans?!
+### Foreman?!
+]
+
+.right-column[
+![task-metadata.png](task-metadata.png)
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+
+???
+
+* The metadata can contains a description and datatypes for tasks. Those information can be shown as well.
+
+---
+
+.left-column[
+## OpenBolt
+### Tasks?!
+### Plans?!
+### Foreman?!
+]
+
+.right-column[
+.img80[![task-running.png](task-running.png)]
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+
+???
+
+* While the task is running, the UI polls the status from the smart proxy.
+
+---
+
+.left-column[
+## OpenBolt
+### Tasks?!
+### Plans?!
+### Foreman?!
+]
+
+.right-column[
+![task-execution-details.png](task-execution-details.png)
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+
+???
+
+* After the task finished, it will display a success for failure page.
+
+---
+
+.left-column[
+## OpenBolt
+### Tasks?!
+### Plans?!
+### Foreman?!
+]
+
+.right-column[
+![task-log-output.png](task-log-output.png)
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+
+???
+
+* We also display the used OpenBolt command line, in case you want to manually run it or debug it.
+
+---
+
+.left-column[
+## OpenBolt
+### Tasks?!
+### Plans?!
+### Foreman?!
+]
+
+.right-column[
+![task-result.png](task-result.png)
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+
+???
+
+* OpenBolt returns JSON for executed tasks. That's visible in the UI. For failed tasks but also for passed tasks.
+
+---
+
+.left-column[
+## OpenBolt
+### Tasks?!
+### Plans?!
+### Foreman?!
+]
+
+.right-column[
+.img57[![task-successful-result.png](task-successful-result.png)]
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+
+???
+
+---
+
+.left-column[
+## OpenBolt
+### Tasks?!
+### Plans?!
+### Foreman?!
+### Choria?!
+]
+
+.right-column[
+* [Choria Orchestration System](https://choria.io/docs/concepts/architecture/)
+.img70[![choria.drawio.svg](choria.drawio.svg)]
+
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+
+???
+
+* successor of mcollective, or mcollective 2.0. same developers. scales to tens of thousands of systems
+---
+
+.left-column[
+## OpenBolt
+### Tasks?!
+### Plans?!
+### Foreman?!
+### Choria?!
+]
+
+.right-column[
+* [Choria Orchestration System](https://choria.io/docs/concepts/architecture/)
+.img70[![openbolt-choria.drawio.svg](openbolt-choria.drawio.svg)]
+
+]
+
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+
+???
+
+* successor of mcollective, or mcollective 2.0. same developers. scales to tens of thousands of systems
+---
 .left-column[
 ## Conclusion
 ]
 
 .right-column[
 
+* OpenBolt is a great addition to the Foreman ecosystem
+
+  * Makes it easy to reuse existing Tasks (and soon Plans)
+
+]
+[![company-logo](logo-1181x1181.png)](https://www.betadots.de)
+[![conference-logo-slides](logo-cfgmgmtcamp.png)](https://cfgmgmtcamp.org/ghent2026/)
+
+???
+
+---
+
+count: false
+
+.left-column[
+## Conclusion
+]
+
+.right-column[
+
+* OpenBolt is a great addition to the Foreman ecosystem
+
+  * Makes it easy to reuse existing Tasks (and soon Plans)
+
 * Please join our [IRC/Slack](https://voxpupuli.org/connect/) to provide feedback
 
-* Review and comment our topics for Wednesday: [github.com/orgs/voxpupuli/projects/14](https://github.com/orgs/voxpupuli/projects/14)
-
-* Come to VoxConf 2026 and submit talks!
-
-  * There will be a travel budget again
-
-* For feedback: `bastelfreak` on [voxpupuli.slack.com](https://short.voxpupu.li/puppetcommunity_slack_signup/) / [Libera.Chat IRC](https://voxpupuli.org/connect/) or [tim@bastelfreak.de](mailto:tim@bastelfreak.de)
+* For feedback: `bastelfreak` on IRC/ Slack or [tim@bastelfreak.de](mailto:tim@bastelfreak.de)
 
 * This talk and previous ones: [github.com/bastelfreak/talks](https://github.com/bastelfreak/talks)
 
